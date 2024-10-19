@@ -158,4 +158,4 @@ function useScrollProgress(
   return { scrollPercentage, scrollDirection };
 }
 
-export default useScrollProgress;
+export {useScrollProgress};

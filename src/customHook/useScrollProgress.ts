@@ -3,17 +3,17 @@
 //   [threshold: number]: (scrollPercentage: number) => void;
 // }
 
-// export interface UseScrollProgressOptions {
+// export interface useScrollTrackerOptions {
 //   thresholdEvents?: ThresholdEvents;
 //   horizontalScroll?: boolean;
 // }
 
-// function useScrollProgress(
+// function useScrollTracker(
 //   targetElement: Window | HTMLElement = window,
 //   {
 //     thresholdEvents = {},
 //     horizontalScroll = false,
-//   }: UseScrollProgressOptions = {}
+//   }: useScrollTrackerOptions = {}
 // ) {
 //   const [scrollPercentage, setScrollPercentage] = useState<number>(0);
 //   const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | 'left' | 'right' | null>(null);
@@ -65,7 +65,7 @@
 //   return { scrollPercentage, scrollDirection };
 // }
 
-// export default useScrollProgress;
+// export default useScrollTracker;
 
 import { useState, useEffect, useRef } from 'react';
 
@@ -73,14 +73,14 @@ interface ThresholdEvents {
   [threshold: number]: (scrollPercentage: number) => void;
 }
 
-interface UseScrollProgressOptions {
+interface useScrollTrackerOptions {
   thresholdEvents?: ThresholdEvents;
   horizontalScroll?: boolean;
 }
 
-function useScrollProgress(
+function useScrollTracker(
   targetElement: Window | HTMLElement = window,
-  { thresholdEvents = {}, horizontalScroll = false }: UseScrollProgressOptions = {}
+  { thresholdEvents = {}, horizontalScroll = false }: useScrollTrackerOptions = {}
 ) {
   const [scrollPercentage, setScrollPercentage] = useState<number>(0);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | 'left' | 'right' | null>(null);
@@ -158,4 +158,4 @@ function useScrollProgress(
   return { scrollPercentage, scrollDirection };
 }
 
-export {useScrollProgress};
+export {useScrollTracker,ThresholdEvents,useScrollTrackerOptions};

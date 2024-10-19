@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "npx rollup -c && git add . && git commit -m \"build\" && git push"
+    "build": "npx rollup -c && git add . && git commit -m \"package testing\" && git push"
   },
   "author": "Ashish",
   "license": "MIT",

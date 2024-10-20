@@ -2,26 +2,14 @@
   "name": "use-scroll-tracker",
   "version": "0.0.1",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "type": "module",
   "scripts": {
-    "build": "npx rollup -c && git add . && git commit -m \"package testing\" && git push"
+    "build": "rollup -c --bundleConfigAsCjs"
   },
   "author": "Ashish",
   "license": "MIT",
   "description": "useScrollTracker is a custom React hook that tracks the user's scroll progress on a web page or within a specific container. It returns the current scroll percentage, making it easy to implement features like reading progress bars, infinite scrolling, scroll-based animations, and sticky headers. The hook is lightweight, flexible, and suitable for enhancing user experience in React applications. With built-in support for both window and custom container elements, useScrollTracker helps developers seamlessly integrate scroll-based features into their projects.",
-  "devDependencies": {
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@types/react": "^18.3.2",
-    "rollup": "^2.60.0",
-    "tslib": "^2.6.2",
-    "typescript": "^4.3.5",
-    "@types/node": "^20.12.12"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
   "homepage": "https://github.com/ashishcumar/useScrollTracker#readme",
   "repository": {
     "type": "git",
@@ -50,5 +38,18 @@
     "react-scroll",
     "react-custom-hook",
     "scrolltrigger"
-  ]
+  ],
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.3.3",
+    "react": "^18.3.1",
+    "rollup": "^4.20.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
+  }
 }
